@@ -20,6 +20,30 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Elementy sterujące\FB Czujniki\FB_Czujnik_NC.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy sterujące\FB Czujniki\FB_Czujnik_NO.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy sterujące\FB Czujniki\I_Czujnik.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy sterujące\FB Przycisk\FB_Przycisk_NC.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy sterujące\FB Przycisk\FB_Przycisk_NC_Podswietlany.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy sterujące\FB Przycisk\FB_Przycisk_NO.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy sterujące\FB Przycisk\FB_Przycisk_NO_Podswietlany.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy sterujące\FB Przycisk\I_Przycisk.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -27,6 +51,10 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="POUs\Elementy sterujące" />
+    <Folder Include="POUs\Elementy sterujące\FB Czujniki" />
+    <Folder Include="POUs\Elementy sterujące\FB Przycisk" />
+    <Folder Include="POUs\Elementy wykonawcze" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
@@ -43,6 +71,11 @@
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
     </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PLC.tmc">
+      <SubType>Content</SubType>
+    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

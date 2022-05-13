@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_Przycisk_NO" Id="{67222b61-a5e6-41be-9a5c-281db6713395}" SpecialFunc="None">
+    <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									13.05.2022
+//
+//	Obsługa przycisku niepodświetlanego
+//	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+FUNCTION_BLOCK FB_Przycisk_NO IMPLEMENTS I_Przycisk
+VAR
+	Wejscie							AT %I*	: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="CzyNacisniety" Id="{a51ec68c-ac56-4df6-bb60-e43aaa2ebf4e}">
+      <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									13.05.2022
+//
+//	Sprawdzenie czy wciśnięty
+//	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+PROPERTY CzyNacisniety : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{028a46a3-9510-4918-9c72-1eba3fef1122}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[CzyNacisniety								:= Wejscie;
+]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="CzyPuszczony" Id="{265ab40a-71ef-4ed7-aad2-b86894722f58}">
+      <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									13.05.2022
+//
+//	Sprawdzenie czy puszczony
+//	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+PROPERTY CzyPuszczony : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{cb9ad17e-8555-45d9-8453-db0c589da2b4}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[CzyPuszczony								:= NOT Wejscie;
+]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <LineIds Name="FB_Przycisk_NO">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Przycisk_NO.CzyNacisniety.Get">
+      <LineId Id="2" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Przycisk_NO.CzyPuszczony.Get">
+      <LineId Id="2" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
