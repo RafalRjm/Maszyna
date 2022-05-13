@@ -44,6 +44,9 @@
     <Compile Include="POUs\Elementy sterujące\FB Przycisk\I_Przycisk.TcIO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Elementy wykonawcze\FB Cewka\FB_ElektrozaworCewka.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,7 @@
     <Folder Include="POUs\Elementy sterujące\FB Czujniki" />
     <Folder Include="POUs\Elementy sterujące\FB Przycisk" />
     <Folder Include="POUs\Elementy wykonawcze" />
+    <Folder Include="POUs\Elementy wykonawcze\FB Cewka" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
