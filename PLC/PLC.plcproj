@@ -47,6 +47,30 @@
     <Compile Include="POUs\Elementy wykonawcze\FB Cewka\FB_ElektrozaworCewka.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\FB_Elektrozawor_3na2_NC.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\FB_Elektrozawor_3na2_NO.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\FB_Elektrozawor_5na2_1Cewka.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\FB_Elektrozawor_5na2_2Cewki.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\FB_Elektrozawor_5na3_Odpowietrzony.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\FB_Elektrozawor_5na3_Zapowietrzony.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\I_Elektrozawor_3na2.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\I_Elektrozawor_5na.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -59,6 +83,7 @@
     <Folder Include="POUs\Elementy sterujące\FB Przycisk" />
     <Folder Include="POUs\Elementy wykonawcze" />
     <Folder Include="POUs\Elementy wykonawcze\FB Cewka" />
+    <Folder Include="POUs\Elementy wykonawcze\FB Elektrozawor" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>

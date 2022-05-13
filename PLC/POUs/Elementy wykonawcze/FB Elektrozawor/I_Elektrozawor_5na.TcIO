@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <Itf Name="I_Elektrozawor_5na" Id="{c7fce068-6d13-4759-8741-71adfc0cffed}">
+    <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									04.02.2022
+//	Elektrozawor 5 na 2 lub 3
+// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+INTERFACE I_Elektrozawor_5na
+]]></Declaration>
+    <Method Name="WlaczWyjscie2" Id="{14628768-26df-4f80-bd74-e506597ef185}">
+      <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									04.02.2022
+//	Włączenie cewki - wyjscie 2
+// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+METHOD WlaczWyjscie2 : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="WlaczWyjscie4" Id="{93372431-6d90-48fe-b3bc-fcfe4ddf0c38}">
+      <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									04.02.2022
+//	Włączenie cewki - wyjscie 4
+// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+METHOD WlaczWyjscie4 : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="WylaczWyjscie2" Id="{837ad631-c3bd-4c4b-be08-05e9761ca41e}">
+      <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									04.02.2022
+//	Wyłączenie cewki - wyjscie 2
+// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+METHOD WylaczWyjscie2 : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="WylaczWyjscie4" Id="{adb9b7af-2918-41b2-b9db-d2db3dae8239}">
+      <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									04.02.2022
+//	Włączenie cewki - wyjscie 4
+// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+METHOD WylaczWyjscie4 : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

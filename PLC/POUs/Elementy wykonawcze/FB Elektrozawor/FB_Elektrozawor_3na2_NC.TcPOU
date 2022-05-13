@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_Elektrozawor_3na2_NC" Id="{da48c5f4-04a0-486f-a944-3e5ba1447a55}" SpecialFunc="None">
+    <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									04.02.2022
+//	Obsługa elektrozaworu 3/2 normalnie zamkniętego
+// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+FUNCTION_BLOCK FB_Elektrozawor_3na2_NC IMPLEMENTS I_Elektrozawor_3na2
+VAR
+	fbCewka									: FB_ElektrozaworCewka;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Wlacz" Id="{0a38aa95-1740-41f9-a5b8-c999ceaa5f76}">
+      <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									04.02.2022
+//	Włączenie cewki - wyjscie 2
+// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+METHOD Wlacz
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fbCewka.Wylacz ();
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Wylacz" Id="{148ac881-0ef0-40d2-8eb5-022c7e308737}">
+      <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									04.02.2022
+//	Wyłączenie cewki - wyjscie 2
+// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+METHOD Wylacz
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fbCewka.Wlacz ();
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Elektrozawor_3na2_NC">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Elektrozawor_3na2_NC.Wlacz">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_Elektrozawor_3na2_NC.Wylacz">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
