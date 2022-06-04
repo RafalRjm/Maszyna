@@ -20,57 +20,6 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy sterujące\FB Czujniki\FB_Czujnik_NC.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy sterujące\FB Czujniki\FB_Czujnik_NO.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy sterujące\FB Czujniki\I_Czujnik.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy sterujące\FB Przycisk\FB_Przycisk_NC.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy sterujące\FB Przycisk\FB_Przycisk_NC_Podswietlany.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy sterujące\FB Przycisk\FB_Przycisk_NO.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy sterujące\FB Przycisk\FB_Przycisk_NO_Podswietlany.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy sterujące\FB Przycisk\I_Przycisk.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy wykonawcze\FB Cewka\FB_ElektrozaworCewka.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\FB_Elektrozawor_3na2_NC.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\FB_Elektrozawor_3na2_NO.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\FB_Elektrozawor_5na2_1Cewka.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\FB_Elektrozawor_5na2_2Cewki.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\FB_Elektrozawor_5na3_Odpowietrzony.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\FB_Elektrozawor_5na3_Zapowietrzony.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\I_Elektrozawor_3na2.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy wykonawcze\FB Elektrozawor\I_Elektrozawor_5na.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -78,12 +27,6 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
-    <Folder Include="POUs\Elementy sterujące" />
-    <Folder Include="POUs\Elementy sterujące\FB Czujniki" />
-    <Folder Include="POUs\Elementy sterujące\FB Przycisk" />
-    <Folder Include="POUs\Elementy wykonawcze" />
-    <Folder Include="POUs\Elementy wykonawcze\FB Cewka" />
-    <Folder Include="POUs\Elementy wykonawcze\FB Elektrozawor" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
@@ -109,8 +52,8 @@
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-  <Data>
-    <o xml:space="preserve" t="OptionKey">
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
@@ -131,13 +74,13 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-  </Data>
-  <TypeList>
-    <Type n="Hashtable">System.Collections.Hashtable</Type>
-    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-    <Type n="String">System.String</Type>
-  </TypeList>
-</XmlArchive>
+        </Data>
+        <TypeList>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>
