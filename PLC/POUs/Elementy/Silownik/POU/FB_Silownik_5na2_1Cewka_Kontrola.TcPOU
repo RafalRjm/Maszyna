@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_Silownik_5na2_1Cewka_Kontrola" Id="{a0d6017f-6fc8-4f09-bb1c-09b94ac1eab4}" SpecialFunc="None">
+    <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									13.05.2022
+//	Obsługa silonwika z zawrorem 5 na 2 - 1 cewka
+//	Realizacja wysuwania i chowania tłoczyska dla jednej cewki zwrócenie pozycji skrajnych
+// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+FUNCTION_BLOCK FB_Silownik_5na2_1Cewka_Kontrola EXTENDS FB_SilownikBaza_Kontola
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Praca" Id="{f0b7c212-8b35-4dea-8003-8aab3c5da262}">
+      <Declaration><![CDATA[METHOD Praca : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.Praca ();
+
+IF (bPrzesuwanieWStroneKonca AND NOT bCewkaA) THEN
+	bCewkaA									:= TRUE;
+END_IF
+IF  (bPrzesuwanieWStronePoczatku AND bCewkaA) THEN
+	bCewkaA									:= FALSE;
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Silownik_5na2_1Cewka_Kontrola">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Silownik_5na2_1Cewka_Kontrola.Praca">
+      <LineId Id="6" Count="7" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

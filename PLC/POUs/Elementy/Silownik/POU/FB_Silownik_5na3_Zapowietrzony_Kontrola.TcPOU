@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_Silownik_5na3_Zapowietrzony_Kontrola" Id="{8a2b9715-933f-43f4-bfe2-af1e3b571b1d}" SpecialFunc="None">
+    <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									13.05.2022
+//	Obsługa silonwika z zawrorem 5 na 3 - Zapowietrzony
+//	Realizacja wysuwania i chowania tłoczyska dla jednej cewki zwrócenie pozycji skrajnych
+// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+FUNCTION_BLOCK FB_Silownik_5na3_Zapowietrzony_Kontrola EXTENDS FB_SilownikBaza_Kontola
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	bCewkaB							AT %Q*	: BOOL;	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Praca" Id="{8980f354-ab18-4404-ab0a-ace12b02d1fe}">
+      <Declaration><![CDATA[METHOD Praca : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.Praca ();
+
+IF (bPrzesuwanieWStroneKonca AND NOT bCewkaA) THEN
+	bCewkaB									:= TRUE;
+END_IF
+IF  (bPrzesuwanieWStronePoczatku AND bCewkaA) THEN
+	bCewkaB									:= FALSE;
+END_IF
+
+IF (bPrzesuwanieWStronePoczatku AND NOT bCewkaB) THEN
+	bCewkaA									:= TRUE;
+END_IF
+IF  (bPrzesuwanieWStroneKonca AND bCewkaB) THEN
+	bCewkaA									:= FALSE;
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Silownik_5na3_Zapowietrzony_Kontrola">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Silownik_5na3_Zapowietrzony_Kontrola.Praca">
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="12" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="20" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

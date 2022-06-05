@@ -9,16 +9,55 @@
 //==================================================================================================
 PROGRAM MAIN
 VAR
+	bCzujnik0								: FB_Czujnik_NO;
+	bCzujnikMax								: FB_Czujnik_NO;
+	fbSilownik								: FB_SilownikBaza_Kontola (bCzujnikPozycja0 := bCzujnik0, 
+																				bCzujnikPozycjaMax := bCzujnikMax);
+	bDoPoczatku: BOOL;
+	bDoKonca: BOOL;
+	bNaPoczatku: BOOL;
+	bNaKoncu: BOOL;
 
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
+      <ST><![CDATA[fbSilownik ();
+fbSilownik.Praca ();
+
+IF (bDoPoczatku) THEN
+	fbSilownik.PrzesunDoPoczatku			:= TRUE;
+	bDoPoczatku								:= FALSE;
+END_IF
+
+IF (bDoKonca) THEN
+	fbSilownik.PrzesunDoKonca				:= TRUE;
+	bDoKonca								:= FALSE;
+END_IF
+
+bNaPoczatku									:= fbSilownik.NaPoczatku;
+bNaKoncu									:= fbSilownik.NaKoncu;
+
+
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="38" Count="0" />
+      <LineId Id="88" Count="1" />
+      <LineId Id="91" Count="0" />
       <LineId Id="36" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="85" Count="0" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="83" Count="0" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="95" Count="0" />
+      <LineId Id="117" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

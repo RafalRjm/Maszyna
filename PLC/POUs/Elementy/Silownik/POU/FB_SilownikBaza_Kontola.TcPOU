@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_SilownikBaza_Kontola" Id="{676285f5-d65d-4332-a0d9-89ca6ebe6eeb}" SpecialFunc="None">
+    <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									13.05.2022
+//	Obsługa silonwika podstawa z kontrolą czasów oraz kontrolą czujników
+//	Realizacja wysuwania i chowania tłoczyska dla jednej cewki zwrócenie pozycji skrajnych
+// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+FUNCTION_BLOCK FB_SilownikBaza_Kontola EXTENDS FB_SilownikBaza
+VAR_INPUT
+	stParametry								: DUT_SilownikParametry;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	tonCzasNaPrace							: TON;
+	tonCzasNaPowrot							: TON;
+	fbKontrolaCzujnik0_F					: F_TRIG;
+	fbKontrolaCzujnikMax_F					: F_TRIG;
+	fbKontrolaCzujnik0_R					: R_TRIG;
+	fbKontrolaCzujnikMax_R					: R_TRIG;
+	bOstrzezeniePraca						: BOOL;
+	bOstrzezeniePowrot						: BOOL;
+	bOstrzezenieUstrataPozycji0				: BOOL;
+	bOstrzezenieUtrataPozycjiMax			: BOOL;
+	bBladUstawieniaCzujnikow				: BOOL;	//zapalone dwa czujniki na raz
+	bBladZamianyCzujnikow					: BOOL; //zadziałany czujnik nie ten którego się spodziewamy 
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Praca" Id="{5c9857db-7c66-48f3-9aab-6ac7209ef8b0}">
+      <Declaration><![CDATA[METHOD Praca : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.Praca ();
+//Czasy sprawdzające czas wysunięcia lub chowania tłoczyska
+	tonCzasNaPrace (IN := bPrzesuwanieWStroneKonca, PT := REAL_TO_TIME (stParametry.rCzasNaPrace));
+	tonCzasNaPowrot (In := bPrzesuwanieWStronePoczatku, PT := REAL_TO_TIME (stParametry.rCzasNaPowrot));
+//kontrola wysuwania
+	IF (tonCzasNaPrace.Q) THEN
+		bOstrzezeniePraca						:= TRUE;
+	ELSIF (fbCzujnikPozycjaMax.CzyZadzialany AND NOT bPrzesuwanieWStroneKonca AND bOstrzezeniePraca) THEN
+		bOstrzezeniePraca						:= FALSE;
+	END_IF
+//kontrola powrotu
+	IF (tonCzasNaPowrot.Q) THEN
+		bOstrzezeniePowrot						:= TRUE;
+	ELSIF (fbCzujnikPozycja0.CzyZadzialany AND NOT bPrzesuwanieWStronePoczatku AND bOstrzezeniePowrot) THEN
+		bOstrzezeniePowrot						:= FALSE;
+	END_IF
+//kontrola utraty pozycji 0
+	fbKontrolaCzujnik0_F (CLK := fbCzujnikPozycja0.CzyZadzialany);
+	IF (fbKontrolaCzujnik0_F.Q AND NOT bPrzesuwanieWStroneKonca) THEN
+		bOstrzezenieUstrataPozycji0				:= TRUE;
+	ELSIF (fbCzujnikPozycja0.CzyZadzialany and bOstrzezenieUstrataPozycji0) THEN
+		bOstrzezenieUstrataPozycji0				:= FALSE;
+	END_IF
+//kontrola utraty pozycji MAX
+	fbKontrolaCzujnikMax_F (CLK := fbCzujnikPozycjaMax.CzyZadzialany);
+	IF (fbKontrolaCzujnikMax_F.Q AND NOT bPrzesuwanieWStronePoczatku) THEN
+		bOstrzezenieUtrataPozycjiMax			:= TRUE;
+	ELSIF (fbCzujnikPozycjaMax.CzyZadzialany AND bOstrzezenieUtrataPozycjiMax) THEN
+		bOstrzezenieUtrataPozycjiMax			:= FALSE;
+	END_IF	
+//Bladustawienia czujnikow - zadziałane dwa czujniki
+	IF (fbCzujnikPozycja0.CzyZadzialany AND fbCzujnikPozycjaMax.CzyZadzialany) THEN
+		bBladUstawieniaCzujnikow				:= TRUE;
+	ELSE
+		bBladUstawieniaCzujnikow				:= FALSE;
+	END_IF
+//Blad zamiany czujnikow	
+	fbKontrolaCzujnik0_R (CLK := fbCzujnikPozycja0.CzyZadzialany);
+	fbKontrolaCzujnikMax_R (CLK := fbCzujnikPozycjaMax.CzyZadzialany);
+	IF ((fbKontrolaCzujnik0_R.Q AND bPrzesuwanieWStroneKonca) OR
+		(fbKontrolaCzujnikMax_R.Q AND bPrzesuwanieWStronePoczatku)) THEN
+		bBladZamianyCzujnikow					:= TRUE;
+	END_IF
+	IF ((NaPoczatku AND NOT bPrzesuwanieWStroneKonca) OR 
+		(NaKoncu and not bPrzesuwanieWStronePoczatku) AND bBladZamianyCzujnikow) THEN
+		bBladZamianyCzujnikow					:= FALSE;
+	END_IF	]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_SilownikBaza_Kontola">
+      <LineId Id="13" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SilownikBaza_Kontola.Praca">
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="1" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="10" Count="2" />
+      <LineId Id="14" Count="1" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="16" Count="4" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="22" Count="1" />
+      <LineId Id="25" Count="1" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="31" Count="3" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="35" Count="4" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="44" Count="1" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="47" Count="1" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="46" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

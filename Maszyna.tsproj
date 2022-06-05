@@ -16,21 +16,19 @@
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>MAIN.fbSilownik.bAtBasePos</Name>
-							<Comment><![CDATA[ Hardware input signal: cylinder is at base position]]></Comment>
+							<Name>MAIN.bCzujnik0.bWejscie</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>MAIN.fbSilownik.bAtWorkPos</Name>
-							<Comment><![CDATA[ Hardware input signal: cylinder is at work position]]></Comment>
+							<Name>MAIN.bCzujnikMax.bWejscie</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>MAIN.fbSilownik.bMoveToWork</Name>
-							<Comment><![CDATA[ Hardware output signal to move cylinder to work position]]></Comment>
+							<Name>MAIN.fbSilownik.bCewkaA</Name>
+							<Comment><![CDATA[Cewka sterująca wyjściem 2 - do MAX]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
