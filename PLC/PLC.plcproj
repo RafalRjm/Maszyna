@@ -68,6 +68,9 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Obsługa alarmów\POU\FB_ObslugaAlarmow.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
@@ -80,6 +83,10 @@
     <Folder Include="POUs\Elementy\Silownik\ITF" />
     <Folder Include="POUs\Elementy\Silownik\DUT" />
     <Folder Include="POUs\Elementy\Silownik\POU" />
+    <Folder Include="POUs\Obsługa alarmów" />
+    <Folder Include="POUs\Obsługa alarmów\DUT" />
+    <Folder Include="POUs\Obsługa alarmów\ITF" />
+    <Folder Include="POUs\Obsługa alarmów\POU" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
