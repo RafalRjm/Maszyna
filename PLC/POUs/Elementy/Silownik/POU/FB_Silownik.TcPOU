@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
-  <POU Name="FB_SilownikBaza" Id="{1297c481-08dc-4d8c-84f0-8560146f24e2}" SpecialFunc="None">
+  <POU Name="FB_Silownik" Id="{1297c481-08dc-4d8c-84f0-8560146f24e2}" SpecialFunc="None">
     <Declaration><![CDATA[//==================================================================================================
 //								RJM Maszyny sp. z o.o.
 //									13.05.2022
@@ -8,7 +8,7 @@
 //	Realizacja wysuwania i chowania tłoczyska dla jednej cewki zwrócenie pozycji skrajnych
 // 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
 //==================================================================================================
-FUNCTION_BLOCK FB_SilownikBaza IMPLEMENTS ITF_Silownik
+FUNCTION_BLOCK FB_Silownik IMPLEMENTS ITF_Silownik
 VAR_INPUT
 END_VAR
 VAR_OUTPUT
@@ -16,8 +16,8 @@ END_VAR
 VAR
 	fbCzujnikPozycja0						: ITF_Czujnik;		//czujnik połozenia tłoczyska
 	fbCzujnikPozycjaMax						: ITF_Czujnik;		//czujnik położenia tłoczyska
-	bCewkaA							AT %Q*	: BOOL;		//Cewka sterująca wyjściem 2 - do MAX
-
+	fbElektrozawor							: ITF_Elektozawor;	//elektrozawor sterujący siłownikiem
+	
 	bPrzesuwanieWStronePoczatku				: BOOL;
 	bPrzesuwanieWStroneKonca				: BOOL;
 END_VAR
@@ -31,14 +31,15 @@ END_VAR
 VAR_INPUT
 	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
 	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
-	bCzujnikPozycja0						: ITF_Czujnik;		//czujnik połozenia tłoczyska
-	bCzujnikPozycjaMax						: ITF_Czujnik;		//czujnik położenia tłoczyska
-
+	fbCzujnikPozycja0						: ITF_Czujnik;		//czujnik połozenia tłoczyska
+	fbCzujnikPozycjaMax						: ITF_Czujnik;		//czujnik położenia tłoczyska
+	fbElektrozawor							: ITF_Elektozawor;	//elektrozawor sterujący siłownikiem
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[THIS^.fbCzujnikPozycja0						:= bCzujnikPozycja0;	  
-THIS^.fbCzujnikPozycjaMax					:= bCzujnikPozycjaMax;
+        <ST><![CDATA[THIS^.fbCzujnikPozycja0						:= fbCzujnikPozycja0;	  
+THIS^.fbCzujnikPozycjaMax					:= fbCzujnikPozycjaMax;
+THIS^.fbElektrozawor						:= fbElektrozawor;
 	]]></ST>
       </Implementation>
     </Method>
@@ -105,6 +106,7 @@ END_IF
 IF (bPrzesuwanieWStroneKonca AND fbCzujnikPozycjaMax.CzyZadzialany) THEN
 	bPrzesuwanieWStroneKonca				:= FALSE;
 END_IF
+
 
 ]]></ST>
       </Implementation>
@@ -200,72 +202,78 @@ END_VAR
 IF (bRuchWStronePoczatku AND NOT bRuchWstroneKonca) THEN
 	bPrzesuwanieWStronePoczatku				:= TRUE;
 	bprzesuwanieWStroneKonca				:= FALSE;
+	fbElektrozawor.Steruj (bKierunekWstrone0 := TRUE, bKierunekWStroneMax := FALSE);
 END_IF
 	
 
 IF (bRuchWstroneKonca AND NOT bRuchWStronePoczatku) THEN
 	bprzesuwanieWStroneKonca				:= TRUE;
 	bPrzesuwanieWStronePoczatku				:= FALSE;
+	fbElektrozawor.Steruj (bKierunekWstrone0 := FALSE, bKierunekWStroneMax := TRUE);
 END_IF]]></ST>
       </Implementation>
     </Method>
-    <LineIds Name="FB_SilownikBaza">
+    <LineIds Name="FB_Silownik">
       <LineId Id="9" Count="0" />
       <LineId Id="17" Count="0" />
     </LineIds>
-    <LineIds Name="FB_SilownikBaza.FB_init">
+    <LineIds Name="FB_Silownik.FB_init">
       <LineId Id="7" Count="0" />
       <LineId Id="11" Count="1" />
+      <LineId Id="21" Count="0" />
     </LineIds>
-    <LineIds Name="FB_SilownikBaza.NaKoncu.Get">
+    <LineIds Name="FB_Silownik.NaKoncu.Get">
       <LineId Id="5" Count="3" />
       <LineId Id="2" Count="0" />
     </LineIds>
-    <LineIds Name="FB_SilownikBaza.NaPoczatku.Get">
+    <LineIds Name="FB_Silownik.NaPoczatku.Get">
       <LineId Id="2" Count="0" />
       <LineId Id="5" Count="0" />
       <LineId Id="7" Count="1" />
       <LineId Id="6" Count="0" />
       <LineId Id="9" Count="0" />
     </LineIds>
-    <LineIds Name="FB_SilownikBaza.Praca">
+    <LineIds Name="FB_Silownik.Praca">
       <LineId Id="32" Count="0" />
       <LineId Id="5" Count="2" />
       <LineId Id="9" Count="0" />
       <LineId Id="8" Count="0" />
       <LineId Id="10" Count="1" />
+      <LineId Id="42" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="22" Count="0" />
     </LineIds>
-    <LineIds Name="FB_SilownikBaza.PrzesunDoKonca.Set">
+    <LineIds Name="FB_Silownik.PrzesunDoKonca.Set">
       <LineId Id="2" Count="0" />
       <LineId Id="6" Count="1" />
       <LineId Id="5" Count="0" />
     </LineIds>
-    <LineIds Name="FB_SilownikBaza.PrzesunDoPoczatku.Set">
+    <LineIds Name="FB_Silownik.PrzesunDoPoczatku.Set">
       <LineId Id="6" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="5" Count="0" />
     </LineIds>
-    <LineIds Name="FB_SilownikBaza.PrzesuwanieWStroneKonca.Get">
+    <LineIds Name="FB_Silownik.PrzesuwanieWStroneKonca.Get">
       <LineId Id="2" Count="0" />
       <LineId Id="5" Count="0" />
     </LineIds>
-    <LineIds Name="FB_SilownikBaza.PrzesuwanieWStronePoczatku.Get">
+    <LineIds Name="FB_Silownik.PrzesuwanieWStronePoczatku.Get">
       <LineId Id="2" Count="0" />
       <LineId Id="5" Count="0" />
     </LineIds>
-    <LineIds Name="FB_SilownikBaza.StanSilownika">
+    <LineIds Name="FB_Silownik.StanSilownika">
       <LineId Id="8" Count="0" />
       <LineId Id="5" Count="0" />
       <LineId Id="15" Count="0" />
       <LineId Id="17" Count="0" />
+      <LineId Id="23" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="9" Count="0" />
       <LineId Id="11" Count="0" />
       <LineId Id="10" Count="0" />
       <LineId Id="12" Count="0" />
       <LineId Id="14" Count="0" />
+      <LineId Id="24" Count="0" />
       <LineId Id="13" Count="0" />
     </LineIds>
   </POU>

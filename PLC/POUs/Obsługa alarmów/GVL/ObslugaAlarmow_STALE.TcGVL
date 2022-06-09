@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <GVL Name="ObslugaAlarmow_STALE" Id="{3ec51b3e-331d-49ed-b32e-4f95ca75c742}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+	MAX_LICZBA_OBSLUGIWANYCH_ZDARZEN		: INT := 1000;
+	
+
+
+	LICZBA_WYSWIETLANYCH_ZDARZEN			: INT := 100;
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <Itf Name="ITF_ObslugaAlarmow_ElementWykonawczy" Id="{ffe17445-c3c0-4eb2-a673-e4455b28cc12}">
+    <Declaration><![CDATA[INTERFACE ITF_ObslugaAlarmow_ElementWykonawczy
+]]></Declaration>
+    <Method Name="ZwrocTabliceAktywnychZdarzen" Id="{da3b91b4-33cd-4264-a465-2ae530f68d4b}">
+      <Declaration><![CDATA[METHOD ZwrocTabliceAktywnychZdarzen : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="ZwrocTabliceDefinicjiZdarzen" Id="{5c970a7c-f503-45f8-8a34-d6eff132f24e}">
+      <Declaration><![CDATA[METHOD ZwrocTabliceDefinicjiZdarzen : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

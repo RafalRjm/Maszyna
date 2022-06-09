@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <Itf Name="ITF_ObslugaAlarmow_Podzespol" Id="{bcbecd20-91cf-4531-aaec-a94558b8febc}">
+    <Declaration><![CDATA[INTERFACE ITF_ObslugaAlarmow_Podzespol EXTENDS ITF_ObslugaAlarmow_ElementWykonawczy
+]]></Declaration>
+  </Itf>
+</TcPlcObject>

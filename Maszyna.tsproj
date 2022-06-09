@@ -27,8 +27,13 @@
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>MAIN.fbSilownik.bCewkaA</Name>
-							<Comment><![CDATA[Cewka sterująca wyjściem 2 - do MAX]]></Comment>
+							<Name>MAIN.fbElektrozawor.bCewkaA</Name>
+							<Comment><![CDATA[Cewka sterująca wyjściem 2 - 0 do MAX]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.fbElektrozawor.bCewkaB</Name>
+							<Comment><![CDATA[Cewka sterująca wyjściem 4 - MAX do 0]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>

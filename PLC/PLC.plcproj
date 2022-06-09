@@ -29,43 +29,51 @@
     <Compile Include="POUs\Elementy\Czujnik\POU\FB_Czujnik_NC.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Elementy\Elektrozawór\ITF\ITF_Elektozawor.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy\Elektrozawór\POU\FB_Elektrozawor_5na2_1Cewka.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy\Elektrozawór\POU\FB_Elektrozawor_5na2_2Cewki.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy\Elektrozawór\POU\FB_Elektrozawor_5na3_Odpowietrzony.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Elementy\Elektrozawór\POU\FB_Elektrozawor_5na3_Zapowietrzony.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Elementy\Silownik\DUT\DUT_SilownikParametry.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Elementy\Silownik\ITF\ITF_Silownik.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Silownik\POU\FB_SilownikBaza.TcPOU">
+    <Compile Include="POUs\Elementy\Silownik\POU\FB_Silownik.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Silownik\POU\FB_SilownikBaza_Kontola.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy\Silownik\POU\FB_Silownik_5na2_1Cewka.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy\Silownik\POU\FB_Silownik_5na2_1Cewka_Kontrola.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy\Silownik\POU\FB_Silownik_5na2_2Cewki.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy\Silownik\POU\FB_Silownik_5na2_2Cewki_Kontrola.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy\Silownik\POU\FB_Silownik_5na3_Odpowietrzony.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy\Silownik\POU\FB_Silownik_5na3_Odpowietrzony_Kontrola.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy\Silownik\POU\FB_Silownik_5na3_Zapowietrzony.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Elementy\Silownik\POU\FB_Silownik_5na3_Zapowietrzony_Kontrola.TcPOU">
+    <Compile Include="POUs\Elementy\Silownik\POU\FB_Silownik_Kontola.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Obsługa alarmów\DUT\DUT_ObslugaAlarmow_Zdarzenie.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Obsługa alarmów\GVL\ObslugaAlarmow_STALE.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="POUs\Obsługa alarmów\GVL\ObslugaAlarmow_Zmienne.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="POUs\Obsługa alarmów\ITF\ITF_ObslugaAlarmow_ElementWykonawczy.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Obsługa alarmów\ITF\ITF_ObslugaAlarmow_Podzespol.TcIO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Obsługa alarmów\POU\FB_ObslugaAlarmow.TcPOU">
@@ -79,6 +87,10 @@
     <Folder Include="POUs\Elementy\Czujnik" />
     <Folder Include="POUs\Elementy\Czujnik\ITF" />
     <Folder Include="POUs\Elementy\Czujnik\POU" />
+    <Folder Include="POUs\Elementy\Elektrozawór" />
+    <Folder Include="POUs\Elementy\Elektrozawór\DUT" />
+    <Folder Include="POUs\Elementy\Elektrozawór\ITF" />
+    <Folder Include="POUs\Elementy\Elektrozawór\POU" />
     <Folder Include="POUs\Elementy\Silownik" />
     <Folder Include="POUs\Elementy\Silownik\ITF" />
     <Folder Include="POUs\Elementy\Silownik\DUT" />
@@ -86,6 +98,7 @@
     <Folder Include="POUs\Obsługa alarmów" />
     <Folder Include="POUs\Obsługa alarmów\DUT" />
     <Folder Include="POUs\Obsługa alarmów\ITF" />
+    <Folder Include="POUs\Obsługa alarmów\GVL" />
     <Folder Include="POUs\Obsługa alarmów\POU" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />

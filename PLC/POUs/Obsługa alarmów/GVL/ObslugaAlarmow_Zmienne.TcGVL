@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <GVL Name="ObslugaAlarmow_Zmienne" Id="{5f0d00b4-0efa-4995-a0b3-b4e66e0f7bc4}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	iIloscZdefiniowanychZdarzen				: INT := 0;
+	
+END_VAR			
+]]></Declaration>
+  </GVL>
+</TcPlcObject>

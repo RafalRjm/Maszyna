@@ -9,7 +9,7 @@
 //==================================================================================================
 FUNCTION_BLOCK FB_ObslugaAlarmow
 VAR_INPUT
-	arrTablicaZdarzen						: REFERENCE TO ;
+	arrTablicaZdarzen						: REFERENCE TO ARRAY [1..ObslugaAlarmow_STALE.MAX_LICZBA_OBSLUGIWANYCH_ZDARZEN] OF DUT_ObslugaAlarmow_Zdarzenie;
 END_VAR
 VAR_OUTPUT
 END_VAR
@@ -19,8 +19,34 @@ END_VAR
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
+    <Method Name="PobierzAktywneZdarzenia" Id="{67fc59e8-d6db-4242-a643-33c037c80891}">
+      <Declaration><![CDATA[METHOD PobierzAktywneZdarzenia : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="PobierzDefinicjeZdarzen" Id="{b47a4d20-01d0-45c2-bc61-9a330cbfc97a}">
+      <Declaration><![CDATA[METHOD PobierzDefinicjeZdarzen : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
     <LineIds Name="FB_ObslugaAlarmow">
       <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_ObslugaAlarmow.PobierzAktywneZdarzenia">
+      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_ObslugaAlarmow.PobierzDefinicjeZdarzen">
+      <LineId Id="5" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

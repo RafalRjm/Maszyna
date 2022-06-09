@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
-  <POU Name="FB_SilownikBaza_Kontola" Id="{676285f5-d65d-4332-a0d9-89ca6ebe6eeb}" SpecialFunc="None">
+  <POU Name="FB_Silownik_Kontola" Id="{676285f5-d65d-4332-a0d9-89ca6ebe6eeb}" SpecialFunc="None">
     <Declaration><![CDATA[//==================================================================================================
 //								RJM Maszyny sp. z o.o.
 //									13.05.2022
@@ -8,7 +8,7 @@
 //	Realizacja wysuwania i chowania tłoczyska dla jednej cewki zwrócenie pozycji skrajnych
 // 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
 //==================================================================================================
-FUNCTION_BLOCK FB_SilownikBaza_Kontola EXTENDS FB_SilownikBaza
+FUNCTION_BLOCK FB_Silownik_Kontola EXTENDS FB_Silownik 
 VAR_INPUT
 	stParametry								: DUT_SilownikParametry;
 END_VAR
@@ -87,10 +87,10 @@ END_VAR
 	END_IF	]]></ST>
       </Implementation>
     </Method>
-    <LineIds Name="FB_SilownikBaza_Kontola">
+    <LineIds Name="FB_Silownik_Kontola">
       <LineId Id="13" Count="0" />
     </LineIds>
-    <LineIds Name="FB_SilownikBaza_Kontola.Praca">
+    <LineIds Name="FB_Silownik_Kontola.Praca">
       <LineId Id="5" Count="0" />
       <LineId Id="7" Count="1" />
       <LineId Id="6" Count="0" />

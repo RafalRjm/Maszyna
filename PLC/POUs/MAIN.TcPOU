@@ -11,12 +11,15 @@ PROGRAM MAIN
 VAR
 	bCzujnik0								: FB_Czujnik_NO;
 	bCzujnikMax								: FB_Czujnik_NO;
-	fbSilownik								: FB_SilownikBaza_Kontola (bCzujnikPozycja0 := bCzujnik0, 
-																				bCzujnikPozycjaMax := bCzujnikMax);
+	fbElektrozawor							: FB_Elektrozawor_5na2_2Cewki;
+	fbSilownik								: FB_Silownik_Kontola (fbCzujnikPozycja0 := bCzujnik0, 
+																	fbCzujnikPozycjaMax := bCzujnikMax,
+																	fbElektrozawor := fbElektrozawor);
 	bDoPoczatku: BOOL;
 	bDoKonca: BOOL;
 	bNaPoczatku: BOOL;
 	bNaKoncu: BOOL;
+
 
 END_VAR
 ]]></Declaration>
@@ -36,8 +39,6 @@ END_IF
 
 bNaPoczatku									:= fbSilownik.NaPoczatku;
 bNaKoncu									:= fbSilownik.NaKoncu;
-
-
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
@@ -53,11 +54,8 @@ bNaKoncu									:= fbSilownik.NaKoncu;
       <LineId Id="86" Count="0" />
       <LineId Id="83" Count="0" />
       <LineId Id="92" Count="0" />
-      <LineId Id="87" Count="0" />
-      <LineId Id="93" Count="0" />
-      <LineId Id="116" Count="0" />
-      <LineId Id="95" Count="0" />
-      <LineId Id="117" Count="0" />
+      <LineId Id="159" Count="0" />
+      <LineId Id="181" Count="1" />
     </LineIds>
   </POU>
 </TcPlcObject>
