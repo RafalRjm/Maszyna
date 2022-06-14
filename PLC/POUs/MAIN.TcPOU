@@ -15,33 +15,70 @@ VAR
 	fbSilownik								: FB_Silownik_Kontola (fbCzujnikPozycja0 := bCzujnik0, 
 																	fbCzujnikPozycjaMax := bCzujnikMax,
 																	fbElektrozawor := fbElektrozawor);
-	bDoPoczatku: BOOL;
-	bDoKonca: BOOL;
-	bNaPoczatku: BOOL;
-	bNaKoncu: BOOL;
+	fbSilownik1								: FB_Silownik_Kontola (fbCzujnikPozycja0 := bCzujnik0, 
+																	fbCzujnikPozycjaMax := bCzujnikMax,
+																	fbElektrozawor := fbElektrozawor);																
+	bDoPoczatku								: BOOL;
+	bDoKonca								: BOOL;
+	bNaPoczatku								: BOOL;
+	bNaKoncu								: BOOL;
 
+	bCzujnik0Z								: FB_Czujnik_NO;
+	bCzujnikMaxZ							: FB_Czujnik_NO;
+	fbElektrozaworZ							: FB_Elektrozawor_5na2_2Cewki;
+	bCzujnik0P								: FB_Czujnik_NO;
+	bCzujnikMaxP							: FB_Czujnik_NO;
+	fbElektrozaworP							: FB_Elektrozawor_5na2_2Cewki;
+	
+	fbPrzesuwacz							: FB_PrzesuwaczNaSilowniku (bCzujnik0Zabieraka			:= bCzujnik0Z,
+		                                                                bCzujnikMaxZabieraka		:= bCzujnikMaxZ	,
+	                                                                    fbElektrozaworZabieraka		:= fbElektrozaworZ,
+	                                                                    bCzujnik0Przesuwacza		:= bCzujnik0P,
+	                                                                    bCzujnikMaxPrzesuwacza		:= bCzujnikMaxP	,
+	                                                                    fbElektrozaworPrzesuwacza	:= fbElektrozaworP);
 
+	
+	
+	
+	arrElementyWykonawcze 					: ARRAY [1..10] OF ITF_LogowanieBledow_ElementWykonawczy := 
+														[fbSilownik.fbLBKomunikacja, 
+														fbSilownik1.fbLBKomunikacja,
+														fbPrzesuwacz.fbLBKomunikacja];
+
+	fbLoger 								: FB_LogowanieBledow (	tablica := arrElementyWykonawcze,
+																	iIloscDodanychElementow := 3);
+
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbSilownik ();
-fbSilownik.Praca ();
+      <ST><![CDATA[//--------TESTY FB SILOWNIK
+	fbSilownik ();
+	fbSilownik.Praca ();
+	
+	IF (bDoPoczatku) THEN
+		fbSilownik.PrzesunDoPoczatku			:= TRUE;
+		bDoPoczatku								:= FALSE;
+	END_IF
+	
+	IF (bDoKonca) THEN
+		fbSilownik.PrzesunDoKonca				:= TRUE;
+		bDoKonca								:= FALSE;
+	END_IF
+	
+	bNaPoczatku									:= fbSilownik.NaPoczatku;
+	bNaKoncu									:= fbSilownik.NaKoncu;
+//--------TESTY FB SILOWNIK
+//--------LOGER
+	fbLoger ();
+//--------LOGER
+												
 
-IF (bDoPoczatku) THEN
-	fbSilownik.PrzesunDoPoczatku			:= TRUE;
-	bDoPoczatku								:= FALSE;
-END_IF
 
-IF (bDoKonca) THEN
-	fbSilownik.PrzesunDoKonca				:= TRUE;
-	bDoKonca								:= FALSE;
-END_IF
-
-bNaPoczatku									:= fbSilownik.NaPoczatku;
-bNaKoncu									:= fbSilownik.NaKoncu;
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="309" Count="0" />
       <LineId Id="88" Count="1" />
       <LineId Id="91" Count="0" />
       <LineId Id="36" Count="0" />
@@ -55,7 +92,15 @@ bNaKoncu									:= fbSilownik.NaKoncu;
       <LineId Id="83" Count="0" />
       <LineId Id="92" Count="0" />
       <LineId Id="159" Count="0" />
-      <LineId Id="181" Count="1" />
+      <LineId Id="181" Count="0" />
+      <LineId Id="206" Count="0" />
+      <LineId Id="310" Count="0" />
+      <LineId Id="182" Count="0" />
+      <LineId Id="277" Count="0" />
+      <LineId Id="280" Count="0" />
+      <LineId Id="242" Count="0" />
+      <LineId Id="241" Count="0" />
+      <LineId Id="211" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

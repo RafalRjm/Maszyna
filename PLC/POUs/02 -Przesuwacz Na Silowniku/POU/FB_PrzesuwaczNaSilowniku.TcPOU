@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_PrzesuwaczNaSilowniku" Id="{c7ba1278-3548-4e13-8976-321b6c21dbe0}" SpecialFunc="None">
+    <Declaration><![CDATA[//==================================================================================================
+//								RJM Maszyny sp. z o.o.
+//									13.05.2022
+//	Obsluga przesuwacza na siłowniku 
+//	Siłownik zabieraka plus siłownik przesuwający 
+//	Cykl przesuwania: wysun zabierak -> przesun -> schowaj zabierak -> powrót  
+// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+//==================================================================================================
+FUNCTION_BLOCK FB_PrzesuwaczNaSilowniku
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	bCzujnik0Zabieraka						: ITF_Czujnik;
+	bCzujnikMaxZabieraka					: ITF_Czujnik;
+	fbElektrozaworZabieraka					: ITF_Elektozawor;
+	bCzujnik0Przesuwacza					: ITF_Czujnik;
+	bCzujnikMaxPrzesuwacza					: ITF_Czujnik;
+	fbElektrozaworPrzesuwacza				: ITF_Elektozawor;
+	fbZabierak								: FB_Silownik_Kontola (fbCzujnikPozycja0 		:= bCzujnik0Zabieraka, 
+																	fbCzujnikPozycjaMax 	:= bCzujnikMaxZabieraka,
+																	fbElektrozawor 			:= fbElektrozaworZabieraka);
+	fbPrzesuwaczNaped						: FB_Silownik_Kontola (fbCzujnikPozycja0 		:= bCzujnik0Przesuwacza, 
+																	fbCzujnikPozycjaMax 	:= bCzujnikMaxPrzesuwacza,
+																	fbElektrozawor 			:= fbElektrozaworPrzesuwacza);	
+	arrElementyWykonawcze 					: ARRAY [1..10] OF ITF_LogowanieBledow_ElementWykonawczy := 
+														[fbZabierak.fbLBKomunikacja, 
+														fbPrzesuwaczNaped.fbLBKomunikacja];
+	fbLBKomunikacja							: FB_PrzesuwaczNaSilowniku_Komunikacja 
+														(arrElementyWykonawcze := arrElementyWykonawcze,
+														iIloscPodlementow := 2);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{1ce11768-98bf-4742-be1e-5a2040e34f8c}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	bCzujnik0Zabieraka						: ITF_Czujnik;
+	bCzujnikMaxZabieraka					: ITF_Czujnik;
+	fbElektrozaworZabieraka					: ITF_Elektozawor;
+	bCzujnik0Przesuwacza					: ITF_Czujnik;
+	bCzujnikMaxPrzesuwacza					: ITF_Czujnik;
+	fbElektrozaworPrzesuwacza				: ITF_Elektozawor;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.bCzujnik0Zabieraka					:= bCzujnik0Zabieraka;			     
+THIS^.bCzujnikMaxZabieraka					:= bCzujnikMaxZabieraka;		    
+THIS^.fbElektrozaworZabieraka				:= fbElektrozaworZabieraka;		 
+THIS^.bCzujnik0Przesuwacza					:= bCzujnik0Przesuwacza;		    
+THIS^.bCzujnikMaxPrzesuwacza				:= bCzujnikMaxPrzesuwacza;		  
+THIS^.fbElektrozaworPrzesuwacza				:= fbElektrozaworPrzesuwacza;
+
+THIS^.fbZabierak.FB_init (FALSE, FALSE, bCzujnik0Zabieraka, bCzujnikMaxZabieraka, fbElektrozaworZabieraka);
+THIS^.fbPrzesuwaczNaped.FB_init (FALSE, FALSE, bCzujnik0Przesuwacza, bCzujnikMaxPrzesuwacza, fbElektrozaworPrzesuwacza);
+ ]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_PrzesuwaczNaSilowniku">
+      <LineId Id="9" Count="0" />
+      <LineId Id="33" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PrzesuwaczNaSilowniku.FB_init">
+      <LineId Id="14" Count="4" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="21" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

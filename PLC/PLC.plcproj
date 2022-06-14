@@ -20,40 +20,81 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Czujnik\ITF\ITF_Czujnik.TcIO">
+    <Compile Include="POUs\01 - Elementy\Czujnik\ITF\ITF_Czujnik.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Czujnik\POU\FB_Czujnik_NO.TcPOU">
+    <Compile Include="POUs\01 - Elementy\Czujnik\POU\FB_Czujnik_NO.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Czujnik\POU\FB_Czujnik_NC.TcPOU">
+    <Compile Include="POUs\01 - Elementy\Czujnik\POU\FB_Czujnik_NC.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Elektrozawór\ITF\ITF_Elektozawor.TcIO">
+    <Compile Include="POUs\01 - Elementy\Elektrozawór\ITF\ITF_Elektozawor.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Elektrozawór\POU\FB_Elektrozawor_5na2_1Cewka.TcPOU">
+    <Compile Include="POUs\01 - Elementy\Elektrozawór\POU\FB_Elektrozawor_5na2_1Cewka.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Elektrozawór\POU\FB_Elektrozawor_5na2_2Cewki.TcPOU">
+    <Compile Include="POUs\01 - Elementy\Elektrozawór\POU\FB_Elektrozawor_5na2_2Cewki.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Elektrozawór\POU\FB_Elektrozawor_5na3_Odpowietrzony.TcPOU">
+    <Compile Include="POUs\01 - Elementy\Elektrozawór\POU\FB_Elektrozawor_5na3_Odpowietrzony.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Elektrozawór\POU\FB_Elektrozawor_5na3_Zapowietrzony.TcPOU">
+    <Compile Include="POUs\01 - Elementy\Elektrozawór\POU\FB_Elektrozawor_5na3_Zapowietrzony.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Silownik\DUT\DUT_SilownikParametry.TcDUT">
+    <Compile Include="POUs\01 - Elementy\Silownik\DUT\DUT_SilownikParametry.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Silownik\ITF\ITF_Silownik.TcIO">
+    <Compile Include="POUs\01 - Elementy\Silownik\ITF\ITF_Silownik.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Silownik\POU\FB_Silownik.TcPOU">
+    <Compile Include="POUs\01 - Elementy\Silownik\POU\FB_Silownik.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Elementy\Silownik\POU\FB_Silownik_Kontola.TcPOU">
+    <Compile Include="POUs\01 - Elementy\Silownik\POU\FB_Silownik_Kontola.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\01 - Elementy\Silownik\POU\FB_Silownik_Kontrola_Komunikacja.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\02 -Przesuwacz Na Silowniku\POU\FB_PrzesuwaczNaSilowniku.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\02 -Przesuwacz Na Silowniku\POU\FB_PrzesuwaczNaSilowniku_Komunikacja.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\10 - Logowanie błędów\DUT\DUT_LogowanieBledow_ZdarzenieOpis.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\10 - Logowanie błędów\DUT\DUT_LogowanieBledow_Zdarzenie.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\10 - Logowanie błędów\DUT\DUT_LogowanieBledow_ZdarzenieStan.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\10 - Logowanie błędów\DUT\DUT_LogowanieBledow_ZdarzenieWyswietlane.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\10 - Logowanie błędów\GVL\GVL_LogowanieBledow.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="POUs\10 - Logowanie błędów\GVL\GVL_LogowanieBledow_Stale.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="POUs\10 - Logowanie błędów\ITF\ITF_LogowanieBledow_ElementWykonawczy.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\10 - Logowanie błędów\POU\FB_LogowanieBledow.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\10 - Logowanie błędów\POU\FB_LogowanieBledow_ElementWykonawczy.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\10 - Logowanie błędów\POU\FB_LogowanieBledow_ElementZlozony.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
@@ -63,18 +104,27 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
-    <Folder Include="POUs\Elementy" />
-    <Folder Include="POUs\Elementy\Czujnik" />
-    <Folder Include="POUs\Elementy\Czujnik\ITF" />
-    <Folder Include="POUs\Elementy\Czujnik\POU" />
-    <Folder Include="POUs\Elementy\Elektrozawór" />
-    <Folder Include="POUs\Elementy\Elektrozawór\DUT" />
-    <Folder Include="POUs\Elementy\Elektrozawór\ITF" />
-    <Folder Include="POUs\Elementy\Elektrozawór\POU" />
-    <Folder Include="POUs\Elementy\Silownik" />
-    <Folder Include="POUs\Elementy\Silownik\ITF" />
-    <Folder Include="POUs\Elementy\Silownik\DUT" />
-    <Folder Include="POUs\Elementy\Silownik\POU" />
+    <Folder Include="POUs\01 - Elementy" />
+    <Folder Include="POUs\01 - Elementy\Czujnik" />
+    <Folder Include="POUs\01 - Elementy\Czujnik\ITF" />
+    <Folder Include="POUs\01 - Elementy\Czujnik\POU" />
+    <Folder Include="POUs\01 - Elementy\Elektrozawór" />
+    <Folder Include="POUs\01 - Elementy\Elektrozawór\DUT" />
+    <Folder Include="POUs\01 - Elementy\Elektrozawór\ITF" />
+    <Folder Include="POUs\01 - Elementy\Elektrozawór\POU" />
+    <Folder Include="POUs\01 - Elementy\Silownik" />
+    <Folder Include="POUs\01 - Elementy\Silownik\ITF" />
+    <Folder Include="POUs\01 - Elementy\Silownik\DUT" />
+    <Folder Include="POUs\01 - Elementy\Silownik\POU" />
+    <Folder Include="POUs\02 -Przesuwacz Na Silowniku\ITF" />
+    <Folder Include="POUs\02 -Przesuwacz Na Silowniku\DUT" />
+    <Folder Include="POUs\02 -Przesuwacz Na Silowniku\POU" />
+    <Folder Include="POUs\10 - Logowanie błędów" />
+    <Folder Include="POUs\10 - Logowanie błędów\ITF" />
+    <Folder Include="POUs\10 - Logowanie błędów\DUT" />
+    <Folder Include="POUs\10 - Logowanie błędów\GVL" />
+    <Folder Include="POUs\10 - Logowanie błędów\POU" />
+    <Folder Include="POUs\02 -Przesuwacz Na Silowniku" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>

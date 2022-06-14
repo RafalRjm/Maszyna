@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_LogowanieBledow" Id="{b71b0a28-4386-4dc4-b55c-25a29e40a801}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_LogowanieBledow
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	tablica 								: ARRAY [1..10] OF ITF_LogowanieBledow_ElementWykonawczy;
+	iIloscDodanychElementow					: INT;
+	iID 									: INT;	//ilosść dodanych zdarzeń globalnie
+	iJezykID								: INT := 1045;	//id języka - domyślnie polski
+	bwypelnij								: BOOL;		//Wypełnienie tablic - wykonać na początku i po zmianie języka
+	iI										: INT;
+	iJ										: INT;
+	
+	arrTablicaDefinicjiZdarzen				: ARRAY [1..GVL_LogowanieBledow_Stale.MAX_ILOSC_ZDARZEN] OF DUT_LogowanieBledow_Zdarzenie;
+	arrTablicaDefinicjiZdarzenOpis			: ARRAY [1..GVL_LogowanieBledow_Stale.MAX_ILOSC_ZDARZEN] OF DUT_LogowanieBledow_ZdarzenieOpis;
+	arrTablicaDefinicjiZdarzenStan			: ARRAY [1..GVL_LogowanieBledow_Stale.MAX_ILOSC_ZDARZEN] OF DUT_LogowanieBledow_ZdarzenieStan;
+
+	btest: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF(bwypelnij) THEN
+	FOR iI := 1 TO iIloscDodanychElementow DO 
+//		IF (__ISVALIDREF (tablica [iI])) THEN
+		tablica [iI].ZwrocTabliceDefinicji (	arrTablicaDefinicjiZdarzen := arrTablicaDefinicjiZdarzen,
+												arrTablicaDefinicjiZdarzenOpis := arrTablicaDefinicjiZdarzenOpis,
+												arrTablicaDefinicjiZdarzenStan := arrTablicaDefinicjiZdarzenStan,
+												iIdZdarzenia := iID, 
+												iNrPodzespolu := iI, 
+												iNrPodelementu := 1,
+												iNrElementu := 1, 
+												iJezykId := iJezykID);
+//		ELSE 
+//			EXIT;
+//		END_IF
+	END_FOR
+	bwypelnij := FALSE;
+END_IF
+
+IF (btest) THEN
+FOR iJ := 1 TO iIloscDodanychElementow DO
+	tablica [iJ].ZwrocTabliceStanu (arrTablicaDefinicjiZdarzenStan := arrTablicaDefinicjiZdarzenStan);
+	
+END_FOR
+END_IF
+]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{b7e0c430-8f48-483d-850f-546111d97dba}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	tablica 								: ARRAY [1..10] OF ITF_LogowanieBledow_ElementWykonawczy;
+	iIloscDodanychElementow					: INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.tablica 								:= tablica;
+THIS^.iIloscDodanychElementow				:= iIloscDodanychElementow;
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_LogowanieBledow">
+      <LineId Id="19" Count="3" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="37" Count="1" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="24" Count="4" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="73" Count="2" />
+      <LineId Id="83" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="82" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_LogowanieBledow.FB_init">
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="17" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

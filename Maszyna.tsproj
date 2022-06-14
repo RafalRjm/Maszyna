@@ -23,6 +23,22 @@
 							<Name>MAIN.bCzujnikMax.bWejscie</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>MAIN.bCzujnik0Z.bWejscie</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.bCzujnikMaxZ.bWejscie</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.bCzujnik0P.bWejscie</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.bCzujnikMaxP.bWejscie</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
@@ -33,6 +49,26 @@
 						</Var>
 						<Var>
 							<Name>MAIN.fbElektrozawor.bCewkaB</Name>
+							<Comment><![CDATA[Cewka sterująca wyjściem 4 - MAX do 0]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.fbElektrozaworZ.bCewkaA</Name>
+							<Comment><![CDATA[Cewka sterująca wyjściem 2 - 0 do MAX]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.fbElektrozaworZ.bCewkaB</Name>
+							<Comment><![CDATA[Cewka sterująca wyjściem 4 - MAX do 0]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.fbElektrozaworP.bCewkaA</Name>
+							<Comment><![CDATA[Cewka sterująca wyjściem 2 - 0 do MAX]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.fbElektrozaworP.bCewkaB</Name>
 							<Comment><![CDATA[Cewka sterująca wyjściem 4 - MAX do 0]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
