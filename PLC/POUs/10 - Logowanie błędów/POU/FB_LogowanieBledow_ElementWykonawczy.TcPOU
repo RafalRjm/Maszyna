@@ -14,7 +14,7 @@ VAR_OUTPUT
 END_VAR
 VAR
 	iStartId								: INT := 0;	//numer poczatkowy dla podzespolu
-	arrTablicaStanow						: ARRAY [1..10] OF BOOL;
+	arrTablicaStanow						: ARRAY [1..GVL_LogowanieBledow_Stale.MAX_ILOSC_ZDARZEN_NA_ELEMENT] OF BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>

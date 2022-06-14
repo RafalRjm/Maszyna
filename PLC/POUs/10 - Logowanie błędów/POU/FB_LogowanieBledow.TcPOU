@@ -7,11 +7,12 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
-	tablica 								: ARRAY [1..10] OF ITF_LogowanieBledow_ElementWykonawczy;
+	tablica 								: ARRAY [1..GVL_LogowanieBledow_Stale.MAX_ILOSC_ELEMENTOW] OF ITF_LogowanieBledow_ElementWykonawczy;
 	iIloscDodanychElementow					: INT;
 	iID 									: INT;	//ilosść dodanych zdarzeń globalnie
 	iJezykID								: INT := 1045;	//id języka - domyślnie polski
 	bwypelnij								: BOOL;		//Wypełnienie tablic - wykonać na początku i po zmianie języka
+	bDaneWypelnione							: BOOL := FALSE;	//jak true mozna odczytywac stany podzespolow
 	iI										: INT;
 	iJ										: INT;
 	
@@ -19,34 +20,32 @@ VAR
 	arrTablicaDefinicjiZdarzenOpis			: ARRAY [1..GVL_LogowanieBledow_Stale.MAX_ILOSC_ZDARZEN] OF DUT_LogowanieBledow_ZdarzenieOpis;
 	arrTablicaDefinicjiZdarzenStan			: ARRAY [1..GVL_LogowanieBledow_Stale.MAX_ILOSC_ZDARZEN] OF DUT_LogowanieBledow_ZdarzenieStan;
 
-	btest: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF(bwypelnij) THEN
-	FOR iI := 1 TO iIloscDodanychElementow DO 
-//		IF (__ISVALIDREF (tablica [iI])) THEN
-		tablica [iI].ZwrocTabliceDefinicji (	arrTablicaDefinicjiZdarzen := arrTablicaDefinicjiZdarzen,
-												arrTablicaDefinicjiZdarzenOpis := arrTablicaDefinicjiZdarzenOpis,
-												arrTablicaDefinicjiZdarzenStan := arrTablicaDefinicjiZdarzenStan,
-												iIdZdarzenia := iID, 
-												iNrPodzespolu := iI, 
-												iNrPodelementu := 1,
-												iNrElementu := 1, 
-												iJezykId := iJezykID);
-//		ELSE 
-//			EXIT;
-//		END_IF
-	END_FOR
-	bwypelnij := FALSE;
-END_IF
+      <ST><![CDATA[//Wypełnienie tablicy zdarzen dla wszystkich elementow
+	IF(bwypelnij) THEN
+		bDaneWypelnione						:= FALSE;
+		FOR iI := 1 TO iIloscDodanychElementow DO 
+			tablica [iI].ZwrocTabliceDefinicji (	arrTablicaDefinicjiZdarzen := arrTablicaDefinicjiZdarzen,
+													arrTablicaDefinicjiZdarzenOpis := arrTablicaDefinicjiZdarzenOpis,
+													arrTablicaDefinicjiZdarzenStan := arrTablicaDefinicjiZdarzenStan,
+													iIdZdarzenia := iID, 
+													iNrPodzespolu := iI, 
+													iNrPodelementu := 1,
+													iNrElementu := 1, 
+													iJezykId := iJezykID);
+		END_FOR
+		bwypelnij := FALSE;
+		bDaneWypelnione						:= TRUE;
+	END_IF
 
-IF (btest) THEN
-FOR iJ := 1 TO iIloscDodanychElementow DO
-	tablica [iJ].ZwrocTabliceStanu (arrTablicaDefinicjiZdarzenStan := arrTablicaDefinicjiZdarzenStan);
-	
-END_FOR
-END_IF
+//Aktualizacja tablicy stanów
+	IF (bDaneWypelnione) THEN
+		FOR iJ := 1 TO iIloscDodanychElementow DO
+			tablica [iJ].ZwrocTabliceStanu (arrTablicaDefinicjiZdarzenStan := arrTablicaDefinicjiZdarzenStan);
+		END_FOR
+	END_IF
 ]]></ST>
     </Implementation>
     <Method Name="FB_init" Id="{b7e0c430-8f48-483d-850f-546111d97dba}">
@@ -54,7 +53,7 @@ END_IF
 VAR_INPUT
 	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
 	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
-	tablica 								: ARRAY [1..10] OF ITF_LogowanieBledow_ElementWykonawczy;
+	tablica 								: ARRAY [1..GVL_LogowanieBledow_Stale.MAX_ILOSC_ELEMENTOW] OF ITF_LogowanieBledow_ElementWykonawczy;
 	iIloscDodanychElementow					: INT;
 END_VAR
 ]]></Declaration>
@@ -64,27 +63,48 @@ THIS^.iIloscDodanychElementow				:= iIloscDodanychElementow;
 ]]></ST>
       </Implementation>
     </Method>
+    <Property Name="WypelnijTabliceZdarzen" Id="{4a058b9b-7ed5-4a20-8f86-36e7cd0888e3}">
+      <Declaration><![CDATA[PROPERTY WypelnijTabliceZdarzen : BOOL]]></Declaration>
+      <Set Name="Set" Id="{432c778d-56b7-467a-8279-dc1872be0bc5}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[bwypelnij									:= WypelnijTabliceZdarzen;
+]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
     <LineIds Name="FB_LogowanieBledow">
-      <LineId Id="19" Count="3" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="130" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="22" Count="0" />
       <LineId Id="41" Count="0" />
       <LineId Id="59" Count="0" />
       <LineId Id="37" Count="1" />
       <LineId Id="40" Count="0" />
       <LineId Id="23" Count="0" />
       <LineId Id="39" Count="0" />
-      <LineId Id="24" Count="4" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="131" Count="0" />
       <LineId Id="9" Count="0" />
-      <LineId Id="80" Count="0" />
-      <LineId Id="73" Count="2" />
-      <LineId Id="83" Count="0" />
-      <LineId Id="76" Count="0" />
-      <LineId Id="84" Count="0" />
+      <LineId Id="105" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="128" Count="0" />
+      <LineId Id="74" Count="2" />
+      <LineId Id="129" Count="0" />
       <LineId Id="82" Count="0" />
     </LineIds>
     <LineIds Name="FB_LogowanieBledow.FB_init">
       <LineId Id="7" Count="0" />
       <LineId Id="9" Count="0" />
       <LineId Id="17" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_LogowanieBledow.WypelnijTabliceZdarzen.Set">
+      <LineId Id="2" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

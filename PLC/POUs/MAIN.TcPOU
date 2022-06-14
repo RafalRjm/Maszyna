@@ -9,72 +9,37 @@
 //==================================================================================================
 PROGRAM MAIN
 VAR
-	bCzujnik0								: FB_Czujnik_NO;
-	bCzujnikMax								: FB_Czujnik_NO;
-	fbElektrozawor							: FB_Elektrozawor_5na2_2Cewki;
-	fbSilownik								: FB_Silownik_Kontola (fbCzujnikPozycja0 := bCzujnik0, 
-																	fbCzujnikPozycjaMax := bCzujnikMax,
-																	fbElektrozawor := fbElektrozawor);
-	fbSilownik1								: FB_Silownik_Kontola (fbCzujnikPozycja0 := bCzujnik0, 
-																	fbCzujnikPozycjaMax := bCzujnikMax,
-																	fbElektrozawor := fbElektrozawor);																
 	bDoPoczatku								: BOOL;
 	bDoKonca								: BOOL;
 	bNaPoczatku								: BOOL;
 	bNaKoncu								: BOOL;
-
-	bCzujnik0Z								: FB_Czujnik_NO;
-	bCzujnikMaxZ							: FB_Czujnik_NO;
-	fbElektrozaworZ							: FB_Elektrozawor_5na2_2Cewki;
-	bCzujnik0P								: FB_Czujnik_NO;
-	bCzujnikMaxP							: FB_Czujnik_NO;
-	fbElektrozaworP							: FB_Elektrozawor_5na2_2Cewki;
-	
-	fbPrzesuwacz							: FB_PrzesuwaczNaSilowniku (bCzujnik0Zabieraka			:= bCzujnik0Z,
-		                                                                bCzujnikMaxZabieraka		:= bCzujnikMaxZ	,
-	                                                                    fbElektrozaworZabieraka		:= fbElektrozaworZ,
-	                                                                    bCzujnik0Przesuwacza		:= bCzujnik0P,
-	                                                                    bCzujnikMaxPrzesuwacza		:= bCzujnikMaxP	,
-	                                                                    fbElektrozaworPrzesuwacza	:= fbElektrozaworP);
-
-	
-	
-	
-	arrElementyWykonawcze 					: ARRAY [1..10] OF ITF_LogowanieBledow_ElementWykonawczy := 
-														[fbSilownik.fbLBKomunikacja, 
-														fbSilownik1.fbLBKomunikacja,
-														fbPrzesuwacz.fbLBKomunikacja];
-
-	fbLoger 								: FB_LogowanieBledow (	tablica := arrElementyWykonawcze,
-																	iIloscDodanychElementow := 3);
-
-	
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//--------TESTY FB SILOWNIK
-	fbSilownik ();
-	fbSilownik.Praca ();
+	GVL_Elementy.fbSilownik ();
+	GVL_Elementy.fbSilownik.Praca ();
 	
 	IF (bDoPoczatku) THEN
-		fbSilownik.PrzesunDoPoczatku			:= TRUE;
+		GVL_Elementy.fbSilownik.PrzesunDoPoczatku	:= TRUE;
 		bDoPoczatku								:= FALSE;
 	END_IF
 	
 	IF (bDoKonca) THEN
-		fbSilownik.PrzesunDoKonca				:= TRUE;
+		GVL_Elementy.fbSilownik.PrzesunDoKonca		:= TRUE;
 		bDoKonca								:= FALSE;
 	END_IF
 	
-	bNaPoczatku									:= fbSilownik.NaPoczatku;
-	bNaKoncu									:= fbSilownik.NaKoncu;
+	bNaPoczatku									:= GVL_Elementy.fbSilownik.NaPoczatku;
+	bNaKoncu									:= GVL_Elementy.fbSilownik.NaKoncu;
 //--------TESTY FB SILOWNIK
 //--------LOGER
-	fbLoger ();
+	GVL_LogowanieBledow.fbLoger ();
 //--------LOGER
 												
-
-
+//--------STEROWANIE MASZYNĄ
+	GVL_SterowanieMaszyna.fbSterowanieMaszyna ();
+//--------STEROWANIE MASZYNĄ
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
@@ -101,6 +66,7 @@ END_VAR
       <LineId Id="242" Count="0" />
       <LineId Id="241" Count="0" />
       <LineId Id="211" Count="0" />
+      <LineId Id="363" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

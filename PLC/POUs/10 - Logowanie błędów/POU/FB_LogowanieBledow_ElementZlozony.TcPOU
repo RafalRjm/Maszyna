@@ -14,7 +14,7 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
-	arrElementyWykonawcze 					: ARRAY [1..10] OF ITF_LogowanieBledow_ElementWykonawczy;
+	arrElementyWykonawcze 					: ARRAY [1..GVL_LogowanieBledow_Stale.MAX_ILOSC_ELEMENTOW_NA_PODZESPOL] OF ITF_LogowanieBledow_ElementWykonawczy;
 	iIloscPodlementow						: INT;
 END_VAR
 ]]></Declaration>
@@ -116,23 +116,14 @@ SUPER^.ZwrocTabliceDefinicji (	arrTablicaDefinicjiZdarzen := arrTablicaDefinicji
 //zwrócenie tablicy definicji dla podelementów
 
 	FOR iI := 1 TO iIloscPodlementow DO 
-
-
-//		IF (__ISVALIDREF (arrElementyWykonawcze [iI])) THEN
-			arrElementyWykonawcze [iI].ZwrocTabliceDefinicji (	arrTablicaDefinicjiZdarzen := arrTablicaDefinicjiZdarzen,
-																arrTablicaDefinicjiZdarzenOpis := arrTablicaDefinicjiZdarzenOpis,
-																arrTablicaDefinicjiZdarzenStan := arrTablicaDefinicjiZdarzenStan,
-																iIdZdarzenia := iIdZdarzenia, 
-																iNrPodzespolu := iNrPodzespolu, 
-																iNrPodelementu := iNrPodelementu,
-																iNrElementu := iI+1, 
-																iJezykId := iJezykID);
-//iIdZdarzenia := itest, 
-//													iNrPodzespolu := iIdZdarzenia, iNrPodelementu := 1,
-//													iNrElementu := 1, iJezykId := iJezykID);
-//		ELSE 
-//			EXIT;
-//		END_IF
+		arrElementyWykonawcze [iI].ZwrocTabliceDefinicji (	arrTablicaDefinicjiZdarzen := arrTablicaDefinicjiZdarzen,
+															arrTablicaDefinicjiZdarzenOpis := arrTablicaDefinicjiZdarzenOpis,
+															arrTablicaDefinicjiZdarzenStan := arrTablicaDefinicjiZdarzenStan,
+															iIdZdarzenia := iIdZdarzenia, 
+															iNrPodzespolu := iNrPodzespolu, 
+															iNrPodelementu := iNrPodelementu,
+															iNrElementu := iI+1, 
+															iJezykId := iJezykID);
 	END_FOR													
 
 ]]></ST>
@@ -190,13 +181,8 @@ END_FOR
       <LineId Id="81" Count="0" />
       <LineId Id="91" Count="1" />
       <LineId Id="44" Count="0" />
-      <LineId Id="108" Count="1" />
-      <LineId Id="45" Count="0" />
       <LineId Id="83" Count="6" />
       <LineId Id="46" Count="0" />
-      <LineId Id="82" Count="0" />
-      <LineId Id="54" Count="0" />
-      <LineId Id="47" Count="3" />
       <LineId Id="40" Count="2" />
     </LineIds>
     <LineIds Name="FB_LogowanieBledow_ElementZlozony.ZwrocTabliceStanu">

@@ -17,6 +17,22 @@
     <LibraryReferences>{76d05a0c-0ade-43e4-ac4e-b28b66623297}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GVLs\GVL_Elementy.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_SterowanieMaszyna.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_Wejscia_IO.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_Wyjscia_IO.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -97,6 +113,9 @@
     <Compile Include="POUs\10 - Logowanie błędów\POU\FB_LogowanieBledow_ElementZlozony.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\99 - Sterowanie maszyna\POU\FB_SterowanieMaszyna.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -125,6 +144,8 @@
     <Folder Include="POUs\10 - Logowanie błędów\GVL" />
     <Folder Include="POUs\10 - Logowanie błędów\POU" />
     <Folder Include="POUs\02 -Przesuwacz Na Silowniku" />
+    <Folder Include="POUs\99 - Sterowanie maszyna" />
+    <Folder Include="POUs\99 - Sterowanie maszyna\POU" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>

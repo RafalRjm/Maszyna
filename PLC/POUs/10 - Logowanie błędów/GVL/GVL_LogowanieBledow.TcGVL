@@ -2,8 +2,16 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
   <GVL Name="GVL_LogowanieBledow" Id="{031458d1-4327-4414-a5e1-6329ee0946ec}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'global_init_slot' := '40550'}
 VAR_GLOBAL
+	arrElementyWykonawcze 					: ARRAY [1..GVL_LogowanieBledow_Stale.MAX_ILOSC_ELEMENTOW] OF 
+																ITF_LogowanieBledow_ElementWykonawczy := [
+																	GVL_Elementy.fbSilownik.fbLBKomunikacja, 
+																	GVL_Elementy.fbSilownik1.fbLBKomunikacja,
+																	GVL_Elementy.fbPrzesuwacz.fbLBKomunikacja];
 
+	fbLoger 								: FB_LogowanieBledow (	tablica := arrElementyWykonawcze,
+																	iIloscDodanychElementow := 3);
 	
 END_VAR]]></Declaration>
   </GVL>
