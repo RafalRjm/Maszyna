@@ -13,28 +13,37 @@ VAR
 	bDoKonca								: BOOL;
 	bNaPoczatku								: BOOL;
 	bNaKoncu								: BOOL;
+	bWykonajCyklPrzesuwania					: BOOL;
+	bWyswietlAlarmy							: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//--------TESTY FB SILOWNIK
-	GVL_Elementy.fbSilownik ();
 	GVL_Elementy.fbSilownik.Praca ();
+	GVL_Elementy.fbPrzesuwacz.Praca ();
 	
 	IF (bDoPoczatku) THEN
 		GVL_Elementy.fbSilownik.PrzesunDoPoczatku	:= TRUE;
-		bDoPoczatku								:= FALSE;
+		bDoPoczatku							:= FALSE;
 	END_IF
 	
 	IF (bDoKonca) THEN
-		GVL_Elementy.fbSilownik.PrzesunDoKonca		:= TRUE;
-		bDoKonca								:= FALSE;
+		GVL_Elementy.fbSilownik.PrzesunDoKonca	:= TRUE;
+		bDoKonca							:= FALSE;
 	END_IF
 	
-	bNaPoczatku									:= GVL_Elementy.fbSilownik.NaPoczatku;
-	bNaKoncu									:= GVL_Elementy.fbSilownik.NaKoncu;
+	bNaPoczatku								:= GVL_Elementy.fbSilownik.NaPoczatku;
+	bNaKoncu								:= GVL_Elementy.fbSilownik.NaKoncu;
+	
+	IF (bWykonajCyklPrzesuwania) THEN
+		GVL_Elementy.fbPrzesuwacz.WykonajCyklPrzesuwania	:= TRUE;
+		bWykonajCyklPrzesuwania				:= FALSE;
+	END_IF
 //--------TESTY FB SILOWNIK
 //--------LOGER
-	GVL_LogowanieBledow.fbLoger ();
+	GVL_LogowanieBledow.fbLoger (arrZdarzeniaPamietane 		:= GVL_LogowanieBledow.arrTablicaZdarzenZapamietancyh,
+								iIloscZdarzenZapamietanych 	:= GVL_LogowanieBledow.iIloscZdarzenZapamietanych,
+								bWyswietlanieTablicyAlarmow	:= bWyswietlAlarmy);
 //--------LOGER
 												
 //--------STEROWANIE MASZYNĄ
@@ -44,7 +53,8 @@ END_VAR
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="309" Count="0" />
-      <LineId Id="88" Count="1" />
+      <LineId Id="89" Count="0" />
+      <LineId Id="377" Count="0" />
       <LineId Id="91" Count="0" />
       <LineId Id="36" Count="0" />
       <LineId Id="77" Count="0" />
@@ -58,9 +68,13 @@ END_VAR
       <LineId Id="92" Count="0" />
       <LineId Id="159" Count="0" />
       <LineId Id="181" Count="0" />
+      <LineId Id="378" Count="1" />
+      <LineId Id="383" Count="0" />
+      <LineId Id="380" Count="1" />
       <LineId Id="206" Count="0" />
       <LineId Id="310" Count="0" />
       <LineId Id="182" Count="0" />
+      <LineId Id="384" Count="1" />
       <LineId Id="277" Count="0" />
       <LineId Id="280" Count="0" />
       <LineId Id="242" Count="0" />

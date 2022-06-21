@@ -75,10 +75,16 @@
     <Compile Include="POUs\01 - Elementy\Silownik\POU\FB_Silownik_Kontrola_Komunikacja.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\02 -Przesuwacz Na Silowniku\DUT\DUT_PrzesuwaczNaSilowniku_Parametry.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\02 -Przesuwacz Na Silowniku\POU\FB_PrzesuwaczNaSilowniku.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\02 -Przesuwacz Na Silowniku\POU\FB_PrzesuwaczNaSilowniku_Komunikacja.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\10 - Logowanie błędów\DUT\DUT_LogowanieBledow_Zapamietanych.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\10 - Logowanie błędów\DUT\DUT_LogowanieBledow_ZdarzenieOpis.TcDUT">
@@ -91,6 +97,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\10 - Logowanie błędów\DUT\DUT_LogowanieBledow_ZdarzenieWyswietlane.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\10 - Logowanie błędów\DUT\DUT_LogowanieBledow_WyswietlanieParametry.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\10 - Logowanie błędów\GVL\GVL_LogowanieBledow.TcGVL">
@@ -142,6 +151,7 @@
     <Folder Include="POUs\10 - Logowanie błędów\ITF" />
     <Folder Include="POUs\10 - Logowanie błędów\DUT" />
     <Folder Include="POUs\10 - Logowanie błędów\GVL" />
+    <Folder Include="POUs\10 - Logowanie błędów\Wizualizacja" />
     <Folder Include="POUs\10 - Logowanie błędów\POU" />
     <Folder Include="POUs\02 -Przesuwacz Na Silowniku" />
     <Folder Include="POUs\99 - Sterowanie maszyna" />
@@ -158,6 +168,10 @@
       <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_System</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_Utilities">
+      <DefaultResolution>Tc2_Utilities, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Utilities</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc3_Module">
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
@@ -167,6 +181,11 @@
     <None Include="PLC.tmc">
       <SubType>Content</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="POUs\10 - Logowanie błędów\GVL\Jezyki lista.odt">
+      <SubType>Content</SubType>
+    </Content>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

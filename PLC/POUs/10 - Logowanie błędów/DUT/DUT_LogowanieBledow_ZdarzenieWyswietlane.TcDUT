@@ -8,7 +8,7 @@ STRUCT
 	byRodzajZdarzenia						: BYTE;
 	sOpis									: STRING;
 	dtDataStart								: DT;
-	dtDateKoniec							: DT;
+	dtDataKoniec							: DT;
 	dwKolor									: UDINT;
 END_STRUCT
 END_TYPE

@@ -12,7 +12,14 @@ VAR_GLOBAL
 
 	fbLoger 								: FB_LogowanieBledow (	tablica := arrElementyWykonawcze,
 																	iIloscDodanychElementow := 3);
+																	
 	
-END_VAR]]></Declaration>
+END_VAR
+VAR_GLOBAL //PERSISTENT
+	arrTablicaZdarzenZapamietancyh			: ARRAY [1..GVL_LogowanieBledow_Stale.MAX_ILOSC_ZDARZEN_ZAPAMIETANYCH] OF DUT_LogowanieBledow_Zapamietanych;																
+	
+	iIloscZdarzenZapamietanych				: INT;	//ilosc zdarzen ktore wystapiły
+END_VAR
+]]></Declaration>
   </GVL>
 </TcPlcObject>
