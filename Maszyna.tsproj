@@ -47,6 +47,14 @@
 							<Name>GVL_Wejscia_IO.bCzujnikMaxP.bWejscie</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>GVL_Sterowanie.fbStart.bStyk</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Sterowanie.fbStop.bStyk</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
@@ -88,6 +96,34 @@
 						<Var>
 							<Name>GVL_Wyjscia_IO.fbElektrozaworP.bCewkaB</Name>
 							<Comment><![CDATA[Cewka sterująca wyjściem 4 - MAX do 0]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Sterowanie.fbStart.bPodswietlenie</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Sterowanie.fbStop.bPodswietlenie</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Sterowanie.fbWieza.bCzerwony</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Sterowanie.fbWieza.bZolty</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Sterowanie.fbWieza.bZielony</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Sterowanie.fbWieza.bNiebieski</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Sterowanie.fbWieza.bBialy</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>

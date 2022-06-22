@@ -4,6 +4,8 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 {attribute 'global_init_slot' := '40501'}
 VAR_GLOBAL
+//Przyciski	
+	
 //czujniki siłownik1
 	bCzujnik0S1								: FB_Czujnik_NO;
 	bCzujnikMaxS1							: FB_Czujnik_NO;

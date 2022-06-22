@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <GlobalTextList Name="GlobalTextList" Id="{9440c1e4-f6b4-49c8-9191-e1c3c43bc076}">
+    <XmlArchive>
+      <Data>
+        <o xml:space="preserve" t="GlobalTextListObject">
+          <l n="TextList" t="ArrayList" cet="TextListRow">
+            <o>
+              <v n="TextID">"22"</v>
+              <v n="TextDefault">"%s"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"354"</v>
+              <v n="TextDefault">"Alarmy"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"836"</v>
+              <v n="TextDefault">"Bezpieczeństwo"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"340"</v>
+              <v n="TextDefault">"Błędy"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"274"</v>
+              <v n="TextDefault">"Czas koniec do"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"206"</v>
+              <v n="TextDefault">"Czas koniec od"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"253"</v>
+              <v n="TextDefault">"Czas start do"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"809"</v>
+              <v n="TextDefault">"Czas start od"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"595"</v>
+              <v n="TextDefault">"Data koniec"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"676"</v>
+              <v n="TextDefault">"Data start"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"609"</v>
+              <v n="TextDefault">"Grupa 
+wiadomości"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"324"</v>
+              <v n="TextDefault">"ID"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"917"</v>
+              <v n="TextDefault">"Kod"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"105"</v>
+              <v n="TextDefault">"Nr elem"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"998"</v>
+              <v n="TextDefault">"Nr Elem."</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"197"</v>
+              <v n="TextDefault">"Nr Elementu"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"700"</v>
+              <v n="TextDefault">"Opis"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"516"</v>
+              <v n="TextDefault">"Ostrzerzenia"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"944"</v>
+              <v n="TextDefault">"Powrot"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"414"</v>
+              <v n="TextDefault">"R"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"353"</v>
+              <v n="TextDefault">"Rodzaj"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"916"</v>
+              <v n="TextDefault">"Tylko aktywne"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"528"</v>
+              <v n="TextDefault">"Wiadomości"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+          </l>
+          <l n="Languages" t="ArrayList" />
+          <v n="GuidInit">{f936654d-c3b0-4d35-b0a9-95b7d5e289ed}</v>
+          <v n="GuidReInit">{e3ddb900-c106-49af-afbb-e85bada1e35d}</v>
+          <v n="GuidExitX">{65bf77c8-573d-4527-88b1-d6c9ebb2c7c0}</v>
+        </o>
+      </Data>
+      <TypeList>
+        <Type n="ArrayList">System.Collections.ArrayList</Type>
+        <Type n="GlobalTextListObject">{63784cbb-9ba0-45e6-9d69-babf3f040511}</Type>
+        <Type n="Guid">System.Guid</Type>
+        <Type n="String">System.String</Type>
+        <Type n="TextListRow">{53da1be7-ad25-47c3-b0e8-e26286dad2e0}</Type>
+      </TypeList>
+    </XmlArchive>
+  </GlobalTextList>
+</TcPlcObject>

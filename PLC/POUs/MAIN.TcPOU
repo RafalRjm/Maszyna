@@ -5,7 +5,7 @@
 //								RJM Maszyny sp. z o.o.
 //									13.05.2022
 //	Program główny sterujący  
-// 	v1.0	|| TC v 3.1.4024.22		|| - pierwsza wersja
+// 	v1.0	|| TC v 3.1.4024.29		|| - pierwsza wersja
 //==================================================================================================
 PROGRAM MAIN
 VAR
@@ -15,10 +15,20 @@ VAR
 	bNaKoncu								: BOOL;
 	bWykonajCyklPrzesuwania					: BOOL;
 	bWyswietlAlarmy							: BOOL;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//--------TESTY FB SILOWNIK
+      <ST><![CDATA[(* 	DO ZROBIENIA
+	LOGOWANIE BLEDOW
+		- poprawić wizualizację logowania błędów nie działają przyciski wyboru rodzaju informacji 
+		- id zdarzenia to string nei da się filtrować po id bo nei da się wpisać numerka
+		- na maszynie odznaczyc PERSISTENT
+		- funkcja czyszczenia tablicy zapamietanych 
+	
+*)
+
+//--------TESTY FB SILOWNIK
 	GVL_Elementy.fbSilownik.Praca ();
 	GVL_Elementy.fbPrzesuwacz.Praca ();
 	
@@ -47,11 +57,19 @@ END_VAR
 //--------LOGER
 												
 //--------STEROWANIE MASZYNĄ
-	GVL_SterowanieMaszyna.fbSterowanieMaszyna ();
+	GVL_Sterowanie.fbSterowanieMaszyna ();
 //--------STEROWANIE MASZYNĄ
+
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="401" Count="0" />
+      <LineId Id="408" Count="0" />
+      <LineId Id="404" Count="0" />
+      <LineId Id="406" Count="1" />
+      <LineId Id="409" Count="1" />
+      <LineId Id="403" Count="0" />
+      <LineId Id="402" Count="0" />
       <LineId Id="309" Count="0" />
       <LineId Id="89" Count="0" />
       <LineId Id="377" Count="0" />
@@ -80,7 +98,8 @@ END_VAR
       <LineId Id="242" Count="0" />
       <LineId Id="241" Count="0" />
       <LineId Id="211" Count="0" />
-      <LineId Id="363" Count="0" />
+      <LineId Id="411" Count="0" />
+      <LineId Id="420" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
