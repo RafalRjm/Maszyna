@@ -17,7 +17,7 @@ VAR_OUTPUT
 END_VAR
 VAR
 	arrTablicaElementowWykonawczych 		: ARRAY [1..GVL_LogowanieBledow_Stale.MAX_ILOSC_ELEMENTOW] OF ITF_LogowanieBledow_ElementWykonawczy;
-	iIloscDodanychElementow					: INT;			//ilość dodanych elementow wykonawczych 
+	iIloscDodanychElementow					: INT;			//ilość dodanych elementow wykonawczych, przypisać w deklaracji
 	iIloscDodanychWszystkichZdarzen 		: INT;			//ilosść dodanych zdarzeń globalnie
 	iJezykID								: INT := 1045;	//id języka - domyślnie polski
 	bwypelnij								: BOOL;			//Wypełnienie tablic - wykonać na początku i po zmianie języka

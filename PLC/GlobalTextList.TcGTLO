@@ -11,8 +11,8 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"354"</v>
-              <v n="TextDefault">"Alarmy"</v>
+              <v n="TextID">"977"</v>
+              <v n="TextDefault">"Abort"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
@@ -23,6 +23,11 @@
             <o>
               <v n="TextID">"340"</v>
               <v n="TextDefault">"Błędy"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"0"</v>
+              <v n="TextDefault">"Clear"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
@@ -62,6 +67,11 @@ wiadomości"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"936"</v>
+              <v n="TextDefault">"Hold"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"324"</v>
               <v n="TextDefault">"ID"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -72,18 +82,8 @@ wiadomości"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"105"</v>
-              <v n="TextDefault">"Nr elem"</v>
-              <l n="LanguageTexts" t="ArrayList" />
-            </o>
-            <o>
               <v n="TextID">"998"</v>
               <v n="TextDefault">"Nr Elem."</v>
-              <l n="LanguageTexts" t="ArrayList" />
-            </o>
-            <o>
-              <v n="TextID">"197"</v>
-              <v n="TextDefault">"Nr Elementu"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
@@ -97,23 +97,53 @@ wiadomości"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"944"</v>
-              <v n="TextDefault">"Powrot"</v>
-              <l n="LanguageTexts" t="ArrayList" />
-            </o>
-            <o>
               <v n="TextID">"414"</v>
               <v n="TextDefault">"R"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
-              <v n="TextID">"353"</v>
-              <v n="TextDefault">"Rodzaj"</v>
+              <v n="TextID">"573"</v>
+              <v n="TextDefault">"Reset"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"125"</v>
+              <v n="TextDefault">"Start"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"387"</v>
+              <v n="TextDefault">"Stop"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"986"</v>
+              <v n="TextDefault">"Suspend"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"892"</v>
+              <v n="TextDefault">"Tryb automatyczny"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"740"</v>
+              <v n="TextDefault">"Tryb reczny"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
               <v n="TextID">"916"</v>
               <v n="TextDefault">"Tylko aktywne"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"974"</v>
+              <v n="TextDefault">"Un-hold"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"152"</v>
+              <v n="TextDefault">"Un-Suspend"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>

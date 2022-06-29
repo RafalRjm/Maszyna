@@ -57,7 +57,7 @@ END_VAR
 //--------LOGER
 												
 //--------STEROWANIE MASZYNĄ
-	GVL_Sterowanie.fbSterowanieMaszyna ();
+
 //--------STEROWANIE MASZYNĄ
 
 ]]></ST>

@@ -59,15 +59,6 @@
     <Compile Include="POUs\01 - Elementy\Elektrozawór\POU\FB_Elektrozawor_5na3_Zapowietrzony.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\01 - Elementy\Przycisk\ITF\ITF_Przycisk.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\01 - Elementy\Przycisk\POU\FB_Przycisk_NC.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\01 - Elementy\Przycisk\POU\FB_Przycisk_NO.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\01 - Elementy\Silownik\DUT\DUT_SilownikParametry.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -81,12 +72,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\01 - Elementy\Silownik\POU\FB_Silownik_Kontrola_Komunikacja.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\01 - Elementy\Wieza Sygnalizacyjna\ITF\ITF_WiezaSygnalizacyjna.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\01 - Elementy\Wieza Sygnalizacyjna\POU\FB_WiezaSygnalizacyjna_Cyfrowe.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\02 -Przesuwacz Na Silowniku\DUT\DUT_PrzesuwaczNaSilowniku_Parametry.TcDUT">
@@ -140,13 +125,6 @@
       <SubType>Code</SubType>
       <DependentUpon>Visualization Manager.TcVMO</DependentUpon>
     </Compile>
-    <Compile Include="POUs\99 - Sterowanie maszyna\GVL\GVL_Sterowanie.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
-    <Compile Include="POUs\99 - Sterowanie maszyna\POU\FB_Sterowanie.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -169,16 +147,10 @@
     <Folder Include="POUs\01 - Elementy\Elektrozawór\DUT" />
     <Folder Include="POUs\01 - Elementy\Elektrozawór\ITF" />
     <Folder Include="POUs\01 - Elementy\Elektrozawór\POU" />
-    <Folder Include="POUs\01 - Elementy\Wieza Sygnalizacyjna" />
-    <Folder Include="POUs\01 - Elementy\Przycisk" />
-    <Folder Include="POUs\01 - Elementy\Przycisk\ITF" />
-    <Folder Include="POUs\01 - Elementy\Przycisk\POU" />
     <Folder Include="POUs\01 - Elementy\Silownik" />
     <Folder Include="POUs\01 - Elementy\Silownik\ITF" />
     <Folder Include="POUs\01 - Elementy\Silownik\DUT" />
     <Folder Include="POUs\01 - Elementy\Silownik\POU" />
-    <Folder Include="POUs\01 - Elementy\Wieza Sygnalizacyjna\ITF" />
-    <Folder Include="POUs\01 - Elementy\Wieza Sygnalizacyjna\POU" />
     <Folder Include="POUs\02 -Przesuwacz Na Silowniku\ITF" />
     <Folder Include="POUs\02 -Przesuwacz Na Silowniku\DUT" />
     <Folder Include="POUs\02 -Przesuwacz Na Silowniku\POU" />
@@ -189,10 +161,6 @@
     <Folder Include="POUs\10 - Logowanie błędów\Wizualizacja" />
     <Folder Include="POUs\10 - Logowanie błędów\POU" />
     <Folder Include="POUs\02 -Przesuwacz Na Silowniku" />
-    <Folder Include="POUs\99 - Sterowanie maszyna" />
-    <Folder Include="POUs\99 - Sterowanie maszyna\DUT" />
-    <Folder Include="POUs\99 - Sterowanie maszyna\GVL" />
-    <Folder Include="POUs\99 - Sterowanie maszyna\POU" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
